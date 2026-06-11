@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>República Mascota - Tienda Online</title>
+    <meta name="description" content="Tu tienda de mascotas de confianza en Paraguay. Comida por kilo, juguetes y accesorios premium.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <img src="assets/logo.png" alt="República Mascota Logo">
+            </a>
+            <button class="hamburger-btn" id="menuToggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav" id="mainNav" role="navigation" aria-label="Navegación principal">
+                <a href="#bulk">Alimento</a>
+                <a href="#productos">Tienda</a>
+                <a href="#grooming">Peluquería</a>
+                <a href="#about">Nosotros</a>
+            </nav>
+            <button class="cart-icon-btn" id="cartToggle" aria-label="Abrir carrito">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="carousel" id="heroCarousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Bienvenida" loading="lazy">
+                    <div class="carousel-caption">
+                        <h1>Bienvenidos a la República</h1>
+                        <p>Donde cada mascota es un ciudadano de honor.</p>
+                        <a href="#bulk" class="btn btn-yellow">Ver Alimentos</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Promoción" loading="lazy">
+                    <div class="carousel-caption">
+                        <h1>Promoción del Mes</h1>
+                        <p>10% de descuento en Baños Medicados durante todo Abril.</p>
+                        <a href="#grooming" class="btn btn-yellow">Reservar Turno</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1548191265-cc70d3d45ba1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Eventos" loading="lazy">
+                    <div class="carousel-caption">
+                        <h1>Próximos Eventos</h1>
+                        <p>Unite a nuestras jornadas de adopción responsable.</p>
+                        <a href="#about" class="btn btn-yellow">Conocenos</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control prev" id="prevSlide">&lsaquo;</button>
+            <button class="carousel-control next" id="nextSlide">&rsaquo;</button>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </section>
+
+        <section id="bulk" class="container">
+            <div class="section-title">
+                <span></span>
+                <h2>Comida por Peso</h2>
+            </div>
+            <div class="products-grid" id="bulkGrid">
+                <!-- Bulk items will be injected by JS or hardcoded -->
+                <!-- Hardcoding for better SEO/visibility but logic handles it -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="assets/dog_food.png" alt="Mix Cachorros">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mix Cachorros</h3>
+                        <p>Crecimiento fuerte y sano.</p>
+                        <div class="bulk-controls" data-price="18000" data-id="bulk-puppy" data-name="Mix Cachorros">
+                            <span class="bulk-price-tag">18.000 Gs/kg</span>
+                            <div class="weight-selector">
+                                <button class="weight-btn dec-bulk">-</button>
+                                <span class="weight-display">0.1</span>
+                                <button class="weight-btn inc-bulk">+</button>
+                            </div>
+                            <div class="price">1.800 Gs.</div>
+                        </div>
+                        <button class="btn btn-yellow w-full add-bulk-btn">
+                            <i class="fas fa-cart-plus"></i> Agregar Peso
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1585837509701-30b4d49a5f8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mix Adultos" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mix Adultos</h3>
+                        <p>Energía equilibrada diaria.</p>
+                        <div class="bulk-controls" data-price="15000" data-id="bulk-adult" data-name="Mix Adultos">
+                            <span class="bulk-price-tag">15.000 Gs/kg</span>
+                            <div class="weight-selector">
+                                <button class="weight-btn dec-bulk">-</button>
+                                <span class="weight-display">0.1</span>
+                                <button class="weight-btn inc-bulk">+</button>
+                            </div>
+                            <div class="price">1.500 Gs.</div>
+                        </div>
+                        <button class="btn btn-yellow w-full add-bulk-btn">
+                            <i class="fas fa-cart-plus"></i> Agregar Peso
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Alta Proteína" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Alta Proteína</h3>
+                        <p>Para perros activos y atletas.</p>
+                        <div class="bulk-controls" data-price="22000" data-id="bulk-pro" data-name="Alta Proteína">
+                            <span class="bulk-price-tag">22.000 Gs/kg</span>
+                            <div class="weight-selector">
+                                <button class="weight-btn dec-bulk">-</button>
+                                <span class="weight-display">0.1</span>
+                                <button class="weight-btn inc-bulk">+</button>
+                            </div>
+                            <div class="price">2.200 Gs.</div>
+                        </div>
+                        <button class="btn btn-yellow w-full add-bulk-btn">
+                            <i class="fas fa-cart-plus"></i> Agregar Peso
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="productos" class="container">
+            <div class="section-title">
+                <span></span>
+                <h2>Productos Destacados</h2>
+            </div>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Products will be injected by JS -->
+            </div>
+        </section>
+
+        <section id="grooming" class="container">
+            <div class="section-title">
+                <span></span>
+                <h2>Reserva de Peluquería</h2>
+            </div>
+            <div class="booking-container">
+                <div class="booking-text">
+                    <h3>¡Mimalos como se merecen!</h3>
+                    <p>Agendá un turno para que nuestros profesionales cuiden de tu mascota. Contamos con equipos de última generación y productos hipoalergénicos.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Baño Medicado</li>
+                        <li><i class="fas fa-check"></i> Corte de Raza</li>
+                        <li><i class="fas fa-check"></i> Limpieza de Oídos</li>
+                    </ul>
+                </div>
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label for="petName">Nombre de la Mascota</label>
+                        <input type="text" id="petName" name="petName" placeholder="Ej: Firulais" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="petType">Tipo de Mascota</label>
+                        <select id="petType" name="petType" required>
+                            <option value="Perro Pequeño">Perro Pequeño</option>
+                            <option value="Perro Mediano">Perro Mediano</option>
+                            <option value="Perro Grande">Perro Grande</option>
+                            <option value="Gato">Gato</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceType">Servicio Deseado</label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="Baño Medicado">Baño Medicado</option>
+                            <option value="Baño Simple">Baño Simple</option>
+                            <option value="Corte y Baño">Corte y Baño</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingDate">Fecha Sugerida</label>
+                        <input type="date" id="bookingDate" name="bookingDate" required>
+                    </div>
+                    <button type="submit" class="btn btn-yellow w-full">
+                        <i class="fab fa-whatsapp"></i> Solicitar Turno
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section id="brands" class="container">
+            <div class="section-title">
+                <span></span>
+                <h2>Nuestras Marcas</h2>
+            </div>
+            <div class="brands-grid">
+                <div class="brand-item">MARCA A</div>
+                <div class="brand-item">MARCA B</div>
+                <div class="brand-item">MARCA C</div>
+                <div class="brand-item">MARCA D</div>
+                <div class="brand-item">MARCA E</div>
+                <div class="brand-item">MARCA F</div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container about-flex">
+                <div class="about-content">
+                    <div class="section-title">
+                        <span></span>
+                        <h2>Quiénes Somos</h2>
+                    </div>
+                    <p>Somos un negocio familiar compuesto por un matrimonio de veterinarios apasionados por el bienestar animal. Con años de experiencia en clínica y nutrición, decidimos crear la República de las Mascotas para ofrecer no solo productos, sino un asesoramiento integral para tus mejores amigos.</p>
+                    <p>En nuestra república, cada cliente es un ciudadano con derechos y cada mascota es parte de nuestra familia.</p>
+                    <div class="vet-badge">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Atendido por profesionales veterinarios</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581888227599-779811939961?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Veterinarios trabajando" loading="lazy">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="overlay" id="overlay"></div>
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be injected here -->
+            <p style="text-align: center; color: #999; margin-top: 50px;">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="delivery-options">
+                <p style="font-weight: 600; margin-bottom: 10px;">Método de Entrega:</p>
+                <label>
+                    <input type="radio" name="delivery" value="25000" checked> Delivery (25.000 Gs.)
+                </label>
+                <label>
+                    <input type="radio" name="delivery" value="0"> Retiro en Tienda (Gratis)
+                </label>
+            </div>
+            <div class="total-row">
+                <span>Subtotal:</span>
+                <span id="subtotalDisplay">0 Gs.</span>
+            </div>
+            <div class="total-row">
+                <span>Envío:</span>
+                <span id="deliveryDisplay">25.000 Gs.</span>
+            </div>
+            <div class="total-row grand-total">
+                <span>Total:</span>
+                <span id="totalDisplay">25.000 Gs.</span>
+            </div>
+            <button class="btn btn-primary" id="checkoutBtn" style="width: 100%; margin-top: 20px; justify-content: center;">
+                <i class="fab fa-whatsapp"></i> Realizar Pedido por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
