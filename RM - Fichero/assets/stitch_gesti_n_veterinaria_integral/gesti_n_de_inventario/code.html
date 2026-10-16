@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inventario | República Mascota</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#004883",
+                        "on-secondary-container": "#715600",
+                        "on-tertiary-container": "#f6fff4",
+                        "background": "#f4fafd",
+                        "surface-container-low": "#eef5f7",
+                        "outline-variant": "#c1c7d3",
+                        "on-primary-container": "#fdfcff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#d4e3ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#a4c9ff",
+                        "on-tertiary-fixed-variant": "#005228",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#2976c7",
+                        "tertiary-container": "#008645",
+                        "on-surface-variant": "#414751",
+                        "secondary": "#775a00",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#0060ac",
+                        "surface": "#f4fafd",
+                        "secondary-fixed-dim": "#f1c03f",
+                        "tertiary": "#006a35",
+                        "on-secondary-fixed-variant": "#5a4300",
+                        "secondary-fixed": "#ffdf99",
+                        "surface-variant": "#dde4e6",
+                        "tertiary-fixed-dim": "#4ae183",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#251a00",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#a4c9ff",
+                        "on-surface": "#161d1f",
+                        "surface-bright": "#f4fafd",
+                        "inverse-on-surface": "#ebf2f4",
+                        "secondary-container": "#fecb49",
+                        "surface-container-high": "#e2e9ec",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#6bfe9c",
+                        "on-tertiary-fixed": "#00210c",
+                        "outline": "#717783",
+                        "inverse-surface": "#2b3234",
+                        "on-primary-fixed": "#001c39",
+                        "surface-container": "#e8eff1",
+                        "surface-dim": "#d4dbdd",
+                        "primary": "#005da7",
+                        "surface-container-highest": "#dde4e6",
+                        "on-background": "#161d1f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "code-price": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "code-price": ["16px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F8FAFC;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dde4e6;
+            border-radius: 10px;
+        }
+        .tonal-card-shadow {
+            box-shadow: 0px 4px 20px rgba(74, 144, 226, 0.1);
+        }
+    </style>
+</head>
+<body class="text-on-surface bg-background">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low border-r border-outline-variant py-base px-4 flex flex-col z-40 hidden md:flex">
+<div class="mb-8 px-2 pt-4">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">República Mascota</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Gestión Veterinaria</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="font-label-sm text-label-sm">Mascotas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-xl font-bold translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-sm text-label-sm">Inventario</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">Calendario</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-label-sm text-label-sm">Tratamientos</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant space-y-2">
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold font-label-sm text-label-sm mb-4 active:scale-95 transition-transform duration-100">
+                Nueva Consulta
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Ajustes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-sm text-label-sm">Cerrar Sesión</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-[280px] min-h-screen">
+<!-- TopNavBar Anchor -->
+<header class="h-16 bg-surface shadow-sm sticky top-0 z-30 px-margin-desktop flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-surface-container-high border-none rounded-full pl-10 pr-4 py-2 w-64 lg:w-96 font-body-md text-body-md focus:ring-2 focus:ring-primary transition-all" placeholder="Buscar en inventario..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-primary hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-primary hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Avatar del veterinario" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg6tzWu7T0D79QxEoi5HdBrP4U9j4S2oS8jHrFa6A8r8S8yXna6OoSIn9FZwrGss8DzYDOq2cYDp964C03jb6dCikP7FQvZBmci84BB2chLVTo960Z1k-wE-1CEVCMs6brmHrUDg8aJ6xIey3MnhrCxkOgHxFKgjMtZ_BTysrs375mIDX6SpJ9jWftMSWErh1BqniJM71jYuLJFIS2UOXSt8l5zf5bCSf6Idjw9KIFKbvkzZz2C_gt5eYDgvgzu354eSTbjiPhgNM"/>
+</div>
+</div>
+</header>
+<div class="p-margin-mobile md:p-margin-desktop space-y-gutter max-w-container-max mx-auto">
+<!-- Hero / Banner Section -->
+<section class="relative h-48 md:h-64 rounded-3xl overflow-hidden shadow-lg group">
+<img alt="Vista del consultorio" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6rQMeEvhFqiGZnJbAfxYcIRSpg_C1j5jN0f4zIj_KIjVCJxoNGA5HSp31W4jKaI2RmGnxJFI119HHlSuuanju0_Z4pDZe2CaZnZ4WezKl8irb0bGfRus9U8epQglcxz8Rt76R6duhl7qzppg2fzG4UKKduMo7o_3Yd7vafe_e2XYcENklBdI-xBiewTo_QR7l4PHWoRFtXGokGGV__D9IXD2WC7ajpDbW9QRIVOdPU5xJqdee6jRPkZtqjcSwmOrQ0kp5u3cMIv8"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent flex items-center px-8 md:px-12">
+<div class="text-on-primary max-w-md">
+<h2 class="font-headline-lg text-headline-lg mb-2">Control de Inventario</h2>
+<p class="font-body-md text-body-md opacity-90">Administra stock, precios y reposiciones de insumos médicos y farmacia veterinaria.</p>
+</div>
+</div>
+</section>
+<!-- Quick Actions & Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="bg-surface tonal-card-shadow p-6 rounded-2xl flex flex-col justify-between border-l-4 border-primary">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Items</span>
+<span class="font-display-lg text-display-lg text-primary">248</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span> +12 este mes
+                    </span>
+</div>
+<div class="bg-surface tonal-card-shadow p-6 rounded-2xl flex flex-col justify-between border-l-4 border-secondary">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Stock Bajo</span>
+<span class="font-display-lg text-display-lg text-secondary">15</span>
+<span class="font-label-sm text-label-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="warning">warning</span> Requiere atención
+                    </span>
+</div>
+<div class="bg-surface tonal-card-shadow p-6 rounded-2xl flex flex-col justify-between border-l-4 border-tertiary">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Valor Inventario</span>
+<span class="font-display-lg text-headline-lg text-tertiary font-code-price">₲ 45.2M</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Estimado total</span>
+</div>
+<div class="md:col-span-1 flex items-center">
+<button class="w-full h-full bg-primary text-on-primary rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform" data-icon="add_circle">add_circle</span>
+<span class="font-title-md text-title-md">Registrar Entrada</span>
+</button>
+</div>
+</div>
+<!-- Filter & Table Section -->
+<div class="bg-surface tonal-card-shadow rounded-3xl overflow-hidden border border-outline-variant">
+<!-- Toolbar -->
+<div class="p-6 border-b border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-4 overflow-x-auto pb-2 md:pb-0 custom-scrollbar">
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm whitespace-nowrap">Todos</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface-variant hover:bg-surface-variant rounded-full font-label-sm text-label-sm whitespace-nowrap transition-colors">Shampoo</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface-variant hover:bg-surface-variant rounded-full font-label-sm text-label-sm whitespace-nowrap transition-colors">Medicamentos</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface-variant hover:bg-surface-variant rounded-full font-label-sm text-label-sm whitespace-nowrap transition-colors">Pipetas</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface-variant hover:bg-surface-variant rounded-full font-label-sm text-label-sm whitespace-nowrap transition-colors">Alimentos</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-xl text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span> Filtrar
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-xl text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span> Exportar
+                        </button>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase">Nombre del Item</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase">Categoría</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase text-center">Stock</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase">Precio (PYG)</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase">Última Reposición</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Low Stock Row -->
+<tr class="bg-secondary-container/20 hover:bg-secondary-container/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Amoxicilina 250mg</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lab: VetHealth</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-xs font-bold">Medicamentos</span>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex items-center justify-center gap-2">
+<span class="font-bold text-secondary">5</span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="warning">warning</span>
+</div>
+</td>
+<td class="px-6 py-4 font-code-price text-on-surface">₲ 45.000</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">15 May 2024</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 text-tertiary hover:bg-tertiary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="add_box">add_box</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Shampoo Dermacare</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lab: GroomPro</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-xs font-bold">Shampoo</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="font-bold text-on-surface">24</span>
+</td>
+<td class="px-6 py-4 font-code-price text-on-surface">₲ 85.000</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">02 Jun 2024</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 text-tertiary hover:bg-tertiary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="add_box">add_box</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Pipeta Frontline Plus</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lab: Boehringer</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-bold">Pipetas</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="font-bold text-on-surface">42</span>
+</td>
+<td class="px-6 py-4 font-code-price text-on-surface">₲ 120.000</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">20 May 2024</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 text-tertiary hover:bg-tertiary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="add_box">add_box</span></button>
+</td>
+</tr>
+<!-- Low Stock Row -->
+<tr class="bg-secondary-container/20 hover:bg-secondary-container/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Meloxicam 2mg</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lab: VetPharm</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-xs font-bold">Medicamentos</span>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex items-center justify-center gap-2">
+<span class="font-bold text-secondary">2</span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="warning">warning</span>
+</div>
+</td>
+<td class="px-6 py-4 font-code-price text-on-surface">₲ 38.000</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">10 May 2024</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 text-tertiary hover:bg-tertiary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="add_box">add_box</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Jeringas 3ml (Caja x100)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lab: Descartables PY</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-xs font-bold">Insumos</span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="font-bold text-on-surface">15</span>
+</td>
+<td class="px-6 py-4 font-code-price text-on-surface">₲ 55.000</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">25 May 2024</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 text-tertiary hover:bg-tertiary/10 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="add_box">add_box</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-6 border-t border-outline-variant flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mostrando 5 de 248 items</span>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg hover:bg-surface-container-high transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-bold text-sm">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high font-bold text-sm">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high font-bold text-sm">3</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer space for Mobile -->
+<div class="h-20 md:hidden"></div>
+</main>
+<!-- BottomNavBar Anchor (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface shadow-[0_-2px_10px_rgba(0,0,0,0.05)] h-16 flex items-center justify-around px-margin-mobile z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="text-[10px] font-bold">Mascotas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<div class="bg-primary-container p-2 rounded-xl">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+</div>
+<span class="text-[10px] font-bold">Inventario</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-[10px] font-bold">Agenda</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-bold">Más</span>
+</a>
+</nav>
+<script>
+        // Simple interactivity for feedback
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+    </script>
+</body></html>

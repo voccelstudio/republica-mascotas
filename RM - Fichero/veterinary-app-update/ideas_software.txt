@@ -1,0 +1,257 @@
+══════════════════════════════════════════════════════════════════
+  IDEAS DE SOFTWARE DE GESTIÓN PARA DISTINTOS RUBROS
+══════════════════════════════════════════════════════════════════
+
+Generado: Mayo 2026
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  SALUD & BIENESTAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1.  Veterinaria (ya hecho)
+2.  Clínica Médica General — fichas, turnos, recetas, historia clínica
+3.  Clínica Odontológica — odontogramas, turnos, presupuestos
+4.  Clínica Oftalmológica — consultas, cirugías, recetas de lentes
+5.  Centro de Diagnóstico por Imágenes — reservas, informes, PACs
+6.  Laboratorio de Análisis Clínicos — muestras, resultados, informes
+7.  Farmacia — ventas, stock, vencimientos, recetas digitales
+8.  Óptica — venta de lentes, recetas, seguimiento de pedidos
+9.  Centro de Kinesiología/Fisioterapia — turnos, planes, evolución
+10. Centro de Estética/Medicina Estética — turnos, tratamientos, historial
+11. Spa — turnos, tratamientos, paquetes, consumo
+12. Peluquería/Barbería — turnos, servicios, ficha de clientes
+13. Centro de Masajes — turnos, terapeutas, promociones
+14. Psicología/Psiquiatría — agenda, evolución de sesiones
+15. Nutrición/Dietética — planes alimenticios, seguimiento, turnos
+16. Centro de Rehabilitación — terapias, evoluciones, turnos
+17. Podología — turnos, historial clínico
+18. Centro de Acupuntura — tratamientos, agenda, evolución
+19. Homeopatía/Naturopatía — fichas, recetario, seguimiento
+20. Consultorio Veterinario Móvil — rutas, clientes, servicios a domicilio
+21. Pet Shop — ventas, baños, guardería, stock
+22. Guardería Canina — estadía, paseos, alimentación, calendario
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EDUCACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23. Colegio/Instituto — alumnos, cursos, horarios, notas, asistencias
+24. Jardín de Infantes — alumnos, autorizaciones, comunicación padres
+25. Academia de Idiomas — niveles, grupos, horarios, pagos
+26. Centro de Apoyo Escolar — alumnos, materias, agenda, pagos
+27. Universidad/Instituto Terciario — inscripciones, correlatividades, actas
+28. Escuela de Música — instrumentos, horarios, ensayos, recitales
+29. Escuela de Danza — niveles, coreografías, vestuario, eventos
+30. Escuela de Deportes — categorías, torneos, inscripciones
+31. Autoescuela — alumnos, clases prácticas, vehículos, examinadores
+32. Centro de Capacitación Profesional — cursos, certificados, asistencia
+33. Escuela de Cocina/Gastronomía — recetarios, cursos, insumos
+34. Plataforma de Cursos Online — alumnos, contenido, certificados
+35. Gestión de Bibliotecas — libros, socios, préstamos, devoluciones
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  GASTRONOMÍA & HOSTELERÍA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+36. Restaurante — comandas, mesas, delivery, menú digital
+37. Café/Bar — consumiciones, mesas, comandas rápidas
+38. Pizzería / Comida Rápida — pedidos, take away, delivery
+39. Heladería — sabores, combos, stock de insumos
+40. Panadería/Repostería — producción diaria, ventas, recetas
+41. Rotisería — menú del día, pedidos, entregas
+42. Food Truck — rutas, menú variable, ventas diarias
+43. Servicio de Catering — eventos, menús, insumos, cotizaciones
+44. Hotel — reservas, check-in/out, limpieza, habitaciones
+45. Hostel — camas, reservas, pasajeros
+46. Alojamiento Turístico / Cabañas — disponibilidad, reservas, limpieza
+47. Camping — parcelas, reservas, servicios
+48. Bodega / Viñedo — cosechas, lotes, añadas, ventas
+49. Cervecería Artesanal — lotes, fermentación, recetas, ventas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  BELLEZA & MODA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+50. Centro de Estética — turnos, tratamientos, productos
+51. Spa & Bienestar — paquetes, turnos, consumo
+52. Peluquería Canina — turnos, servicios, productos
+53. Tienda de Ropa/Boutique — stock, talle, color, ventas
+54. Zapatería — stock por talle, temporadas
+55. Joyería/Relojería — inventario fino, reparaciones, garantías
+56. Perfumería — ventas, muestras, stock
+57. Tatuaje/Piercing — diseños, turnos, cuidados post
+58. Barbería Clásica — turnos, productos, membresías
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  AUTOMOTRIZ & TRANSPORTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+59. Taller Mecánico — órdenes, repuestos, mano de obra, vehículos
+60. Taller de Chapa y Pintura — presupuestos, seguimiento, seguros
+61. Concesionaria — vehículos, ventas, test drives, comisiones
+62. Estación de Servicio — surtidores, ventas, tanques
+63. Lavadero de Autos — servicios, turnos, membresías
+64. Gomería — servicios, stock de neumáticos
+65. Transporte de Cargas — vehículos, choferes, rutas, tracking
+66. Remisería / Taxi — viajes, choferes, vehículos, tarifas
+67. Mudanzas — presupuestos, equipos, vehículos, tracking
+68. Alquiler de Autos — flota, reservas, check-in/out
+69. Moto Taller — órdenes, repuestos
+70. Bicicletería/Taller de Bicis — ventas, repuestos, servicios
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  DEPORTE & FITNESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+71. Gimnasio — membresías, planes, asistencias, rutinas
+72. CrossFit Box — WODs, clases, membresías
+73. Pilates / Yoga Studio — clases, horarios, packs
+74. Cancha de Fútbol/Paddle/Tenis — reservas, torneos, alquiler
+75. Club Deportivo — socios, cuotas, disciplinas, eventos
+76. Natatorio / Pileta — turnos, cursos, profesores
+77. Centro de Entrenamiento Personal — planes, sesiones, clientes
+78. Pista de Patinaje — turnos, alquiler de patines
+79. Bolera / Bowling — pistas, reservas, eventos
+80. Climbing Gym — membresías, cursos, alquiler de equipo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  INMOBILIARIO & CONSTRUCCIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+81. Inmobiliaria — propiedades, clientes, contratos, alquiler/venta
+82. Administración de Consorcios — expensas, proveedores, reservas
+83. Constructora — proyectos, presupuestos, materiales, avances
+84. Arquitecto/Estudio — planos, clientes, proyectos, entregables
+85. Decoración / Interiorismo — proyectos, presupuestos, compras
+86. Mudanzas y Fletes — presupuestos, vehículos, tracking
+87. Martillero/Remates — lotes, postores, subastas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  SERVICIOS PROFESIONALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+88. Estudio Jurídico/Bufete de Abogados — causas, clientes, vencimientos
+89. Estudio Contable — clientes, vencimientos, balances, impuestos
+90. Estudio de Arquitectura — proyectos, planos, clientes
+91. Agencia de Publicidad/Marketing — campañas, clientes, entregables
+92. Fotógrafo/Filmación — sesiones, eventos, entregas, galería
+93. Diseñador Gráfico — proyectos, clientes, entregables
+94. Productora de Eventos — proveedores, cronogramas, invitados
+95. Oficina de Coworking — espacios, membresías, reservas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  COMERCIO & VENTA MINORISTA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+96. Supermercado / Almacén — ventas, stock, vencimientos
+97. Ferretería — stock por categoría, ventas, proveedores
+98. Verdulería / Frutería — stock perecedero, precios diarios
+99. Carnicería — cortes, stock, ventas por peso
+100. Librería — libros, stock, ventas, reposiciones
+101. Papelería / Artículos de Librería — ventas, stock
+102. Juguetería — stock por edad, temporadas
+103. Tienda de Mascotas — ventas, stock, razas
+104. Vivero — plantas, macetas, insumos, temporada
+105. Florería — arreglos, entregas, temporada
+106. Mercado de Pulgas / Feria — puestos, feriantes, comisiones
+107. Comercio Electrónico / E-commerce — productos, pedidos, envíos
+108. Tienda Online con Stock Local — e-commerce + mostrador
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  AGRICULTURA & GANADERÍA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+109. Campo Agrícola — lotes, cultivos, siembras, cosechas
+110. Tambo / Lechería — animales, ordeñe, producción diaria
+111. Feedlot / Engorde — corrales, animales, alimentación
+112. Granja Avícola — lotes, huevos, alimentación
+113. Apicultura — colmenas, cosechas de miel
+114. Vivero Forestal — especies, plantación, venta
+115. Finca Vitivinícola — viñedos, cosechas, añadas, bodega
+116. Horticultura — invernaderos, lotes, cosechas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  INDUSTRIA & PRODUCCIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+117. Fábrica / Planta de Producción — órdenes de producción, lotes, insumos
+118. Taller de Carpintería — pedidos, maderas, acabados
+119. Taller de Metalúrgica — piezas, planos, materiales
+120. Serigrafía / Imprenta — pedidos, tintas, sustratos
+121. Costura / Taller Textil — prendas, telas, avíos, producción
+122. Fábrica de Muebles — modelos, materiales, pedidos
+123. Envasado / Fraccionamiento — lotes, etiquetado, trazabilidad
+124. Reciclaje / Gestión de Residuos — rutas, materiales, pesaje
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURISMO & RECREACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+125. Agencia de Viajes — paquetes, reservas, clientes, comisiones
+126. Guía Turístico — excursiones, grupos, calendario
+127. Parque de Diversiones — entradas, juegos, promociones
+128. Museo/Galería de Arte — entradas, exposiciones, visitas guiadas
+129. Teatro/Cine — funciones, butacas, venta de entradas
+130. Casino — mesas, máquinas, fichas, reportes
+131. Parque Temático — entradas, juegos, horarios
+132. Zoológico / Acuario — entradas, horarios, animales
+133. Centro Cultural — talleres, eventos, inscripciones
+134. Club de Campo — socios, reservas de canchas, eventos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  HOGAR & SERVICIOS DOMICILIARIOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+135. Limpieza Residencial/Comercial — clientes, turnos, empleados
+136. Jardinería / Paisajismo — clientes, proyectos, mantenimiento
+137. Plomería / Gasista — órdenes, clientes, repuestos
+138. Electricista — órdenes, clientes, materiales
+139. Cerrajería — servicios, clientes, materiales
+140. Pinturería — proyectos, clientes, materiales
+141. Reparaciones del Hogar / Mano de Obra General — órdenes, clientes
+142. Control de Plagas — clientes, rutas, productos
+143. Mudanzas — presupuestos, vehículos, equipos
+144. Servicio de Jardinería / Poda — recurrencia, clientes
+145. Cuidado de Adultos Mayores — turnos, cuidadores, familias
+146. Niñera / Cuidado de Niños — turnos, familias, reportes
+147. Paseador de Perros — recorridas, clientes, pagos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EVENTOS & CELEBRACIONES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+148. Salón de Eventos / Fiestas — reservas, menús, proveedores
+149. Organizador de Bodas — checklist, proveedores, invitados
+150. Fiestas Infantiles — paquetes, animación, catering
+151. Empresa de Catering — eventos, menús, insumos, personal
+152. DJ / Sonido / Iluminación — equipos, eventos, contratos
+153. Fotógrafo de Eventos — sesiones, entregas, galerías
+154. Alquiler de Equipos (sillas, mesas, carpas) — stock, reservas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  LOGÍSTICA & DISTRIBUCIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+155. Depósito / Almacén — ubicaciones, stock, picking
+156. Centro de Distribución — rutas, camiones, entregas
+157. Mensajería / Cadetería — pedidos, repartidores, tracking
+158. Correo / Paquetería — envíos, tracking, sucursales
+159. Mudanzas Internacionales — contenedores, aduana, tracking
+160. Logística Farmacéutica — lotes, vencimientos, trazabilidad
+161. Logística de Alimentos — cadena de frío, lotes, transporte
+162. Fulfillment / E-commerce Logistics — picking, packing, envíos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TECNOLOGÍA & DIGITAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+163. Soporte Técnico de PC — órdenes, equipos, repuestos
+164. Reparación de Celulares — órdenes, repuestos, clientes
+165. Venta de Equipos Electrónicos — stock, ventas, garantías
+166. Ciber/Café Internet — estaciones, tiempo, consumiciones
+167. Servicio de Cloud / Hosting — clientes, planes, facturación
+168. Desarrollo de Software a Medida — proyectos, clientes, sprints
+169. Gaming Center / Lan House — estaciones, torneos, membresías
+170. Impresión 3D — modelos, materiales, pedidos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PROFESIONES LIBERALES / OFICIOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+171. Veterinario Particular — turnos, historial, recetas
+172. Médico Particular — agenda, historia clínica
+173. Abogado Particular — causas, vencimientos, honorarios
+174. Contador Particular — clientes, vencimientos, balances
+175. Arquitecto Particular — proyectos, planos, clientes
+176. Ingeniero Civil — proyectos, materiales, avances
+177. Psicólogo Particular — turnos, evolución, honorarios
+178. Trainer / Coach Personal — sesiones, clientes, planes
+179. Músico / Banda — shows, ensayos, canciones, equipos
+180. Tatuador — turnos, diseños, clientes
+
+══════════════════════════════════════════════════════════════════
+  FIN DEL DOCUMENTO — 180 ideas
+══════════════════════════════════════════════════════════════════

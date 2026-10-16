@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>República Mascota - Calendario de Consultas</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-fixed-variant": "#004883",
+                "on-secondary-container": "#715600",
+                "on-tertiary-container": "#f6fff4",
+                "background": "#f4fafd",
+                "surface-container-low": "#eef5f7",
+                "outline-variant": "#c1c7d3",
+                "on-primary-container": "#fdfcff",
+                "error-container": "#ffdad6",
+                "primary-fixed": "#d4e3ff",
+                "on-tertiary": "#ffffff",
+                "on-primary": "#ffffff",
+                "primary-fixed-dim": "#a4c9ff",
+                "on-tertiary-fixed-variant": "#005228",
+                "surface-container-lowest": "#ffffff",
+                "primary-container": "#2976c7",
+                "tertiary-container": "#008645",
+                "on-surface-variant": "#414751",
+                "secondary": "#775a00",
+                "error": "#ba1a1a",
+                "surface-tint": "#0060ac",
+                "surface": "#f4fafd",
+                "secondary-fixed-dim": "#f1c03f",
+                "tertiary": "#006a35",
+                "on-secondary-fixed-variant": "#5a4300",
+                "secondary-fixed": "#ffdf99",
+                "surface-variant": "#dde4e6",
+                "tertiary-fixed-dim": "#4ae183",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed": "#251a00",
+                "on-error": "#ffffff",
+                "inverse-primary": "#a4c9ff",
+                "on-surface": "#161d1f",
+                "surface-bright": "#f4fafd",
+                "inverse-on-surface": "#ebf2f4",
+                "secondary-container": "#fecb49",
+                "surface-container-high": "#e2e9ec",
+                "on-secondary": "#ffffff",
+                "tertiary-fixed": "#6bfe9c",
+                "on-tertiary-fixed": "#00210c",
+                "outline": "#717783",
+                "inverse-surface": "#2b3234",
+                "on-primary-fixed": "#001c39",
+                "surface-container": "#e8eff1",
+                "surface-dim": "#d4dbdd",
+                "primary": "#005da7",
+                "surface-container-highest": "#dde4e6",
+                "on-background": "#161d1f"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "container-max": "1280px",
+                "margin-desktop": "48px",
+                "base": "8px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Plus Jakarta Sans"],
+                "label-sm": ["Plus Jakarta Sans"],
+                "code-price": ["Plus Jakarta Sans"],
+                "body-md": ["Plus Jakarta Sans"],
+                "headline-lg-mobile": ["Plus Jakarta Sans"],
+                "display-lg": ["Plus Jakarta Sans"],
+                "title-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "label-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "code-price": ["16px", {"lineHeight": "24px", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+      .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+      .clinical-card-shadow { box-shadow: 0px 4px 20px rgba(74, 144, 226, 0.1); }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface flex min-h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low border-r border-outline-variant flex flex-col py-base px-4 z-50">
+<div class="mb-10 px-2">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">República Mascota</h1>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Gestión Veterinaria</p>
+</div>
+<nav class="flex-grow space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-title-md text-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="font-title-md text-label-sm">Mascotas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-title-md text-label-sm">Inventario</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-xl font-bold translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-title-md text-label-sm">Calendario</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant hover:text-on-surface rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-title-md text-label-sm">Tratamientos</span>
+</a>
+</nav>
+<div class="mt-auto space-y-4">
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Nueva Consulta
+            </button>
+<div class="border-t border-outline-variant pt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant rounded-xl transition-all font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Ajustes
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 text-error hover:bg-error-container rounded-xl transition-all font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Cerrar Sesión
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] flex-grow p-gutter flex flex-col gap-gutter">
+<!-- Header Section -->
+<header class="flex justify-between items-center bg-surface p-6 rounded-2xl clinical-card-shadow">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Calendario Médico</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-primary-container" data-icon="today">today</span>
+<span class="text-on-surface-variant font-body-md text-body-md">Octubre 2023 - Clínica Central</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex bg-surface-container-high rounded-lg p-1">
+<button class="px-4 py-2 bg-surface rounded-md shadow-sm text-primary font-bold font-label-sm text-label-sm">Mes</button>
+<button class="px-4 py-2 text-on-surface-variant font-medium font-label-sm text-label-sm hover:bg-surface-variant/50 rounded-md transition-all">Semana</button>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold flex items-center gap-2 clinical-card-shadow hover:opacity-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                    Agendar Nueva Cita
+                </button>
+</div>
+</header>
+<!-- Dynamic Content Section -->
+<div class="flex flex-col lg:flex-row gap-gutter flex-grow overflow-hidden">
+<!-- Left: Calendar Grid -->
+<section class="flex-grow bg-surface rounded-2xl clinical-card-shadow flex flex-col overflow-hidden">
+<div class="p-6 flex justify-between items-center border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<h3 class="font-title-md text-title-md font-bold">Octubre 2023</h3>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Hoy: 24 de Octubre</span>
+</div>
+</div>
+<!-- Calendar Content -->
+<div class="flex-grow p-4">
+<div class="calendar-grid border-b border-outline-variant pb-2 mb-2">
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-60">DOM</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-60">LUN</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-60">MAR</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-60">MIE</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-60">JUE</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-60">VIE</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-60">SAB</div>
+</div>
+<div class="calendar-grid grid-rows-5 h-full">
+<!-- Simplified Calendar Visualization -->
+<div class="aspect-square p-2 text-on-surface-variant/30 text-sm font-medium">27</div>
+<div class="aspect-square p-2 text-on-surface-variant/30 text-sm font-medium">28</div>
+<div class="aspect-square p-2 text-on-surface-variant/30 text-sm font-medium">29</div>
+<div class="aspect-square p-2 text-on-surface-variant/30 text-sm font-medium">30</div>
+<div class="aspect-square p-2 text-on-surface font-medium border border-transparent hover:border-primary/20 rounded-xl transition-all cursor-pointer">1</div>
+<div class="aspect-square p-2 text-on-surface font-medium border border-transparent hover:border-primary/20 rounded-xl transition-all cursor-pointer">2</div>
+<div class="aspect-square p-2 text-on-surface font-medium border border-transparent hover:border-primary/20 rounded-xl transition-all cursor-pointer">3</div>
+<!-- Row 2 -->
+<div class="aspect-square p-2 text-on-surface font-medium">4</div>
+<div class="aspect-square p-2 text-on-surface font-medium flex flex-col gap-1">
+                            5
+                            <div class="h-1.5 w-full bg-secondary-container rounded-full"></div>
+</div>
+<div class="aspect-square p-2 text-on-surface font-medium">6</div>
+<div class="aspect-square p-2 text-on-surface font-medium">7</div>
+<div class="aspect-square p-2 text-on-surface font-medium flex flex-col gap-1">
+                            8
+                            <div class="h-1.5 w-full bg-tertiary-container rounded-full"></div>
+</div>
+<div class="aspect-square p-2 text-on-surface font-medium">9</div>
+<div class="aspect-square p-2 text-on-surface font-medium">10</div>
+<!-- Row 3 (Focus Day) -->
+<div class="aspect-square p-2 text-on-surface font-medium">11</div>
+<div class="aspect-square p-2 text-on-surface font-medium">12</div>
+<div class="aspect-square p-2 text-on-surface font-medium">13</div>
+<div class="aspect-square p-2 text-on-surface font-medium">14</div>
+<div class="aspect-square p-2 text-on-surface font-medium">15</div>
+<div class="aspect-square p-2 text-on-surface font-medium">16</div>
+<div class="aspect-square p-2 text-on-surface font-medium">17</div>
+<!-- Row 4 -->
+<div class="aspect-square p-2 text-on-surface font-medium">18</div>
+<div class="aspect-square p-2 text-on-surface font-medium">19</div>
+<div class="aspect-square p-2 text-on-surface font-medium">20</div>
+<div class="aspect-square p-2 text-on-surface font-medium">21</div>
+<div class="aspect-square p-2 text-on-surface font-medium">22</div>
+<div class="aspect-square p-2 text-on-surface font-medium">23</div>
+<div class="aspect-square p-2 bg-primary/10 border-2 border-primary rounded-xl text-primary font-bold flex flex-col items-center justify-between">
+                            24
+                            <span class="text-[10px] bg-primary text-on-primary px-1.5 rounded-full">8 CITAS</span>
+</div>
+</div>
+</div>
+<!-- Featured Image Anchor -->
+<div class="relative h-48 w-full overflow-hidden mt-auto">
+<img alt="Veterinary Clinic Facility" class="w-full h-full object-cover grayscale opacity-20 hover:grayscale-0 hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6rQMeEvhFqiGZnJbAfxYcIRSpg_C1j5jN0f4zIj_KIjVCJxoNGA5HSp31W4jKaI2RmGnxJFI119HHlSuuanju0_Z4pDZe2CaZnZ4WezKl8irb0bGfRus9U8epQglcxz8Rt76R6duhl7qzppg2fzG4UKKduMo7o_3Yd7vafe_e2XYcENklBdI-xBiewTo_QR7l4PHWoRFtXGokGGV__D9IXD2WC7ajpDbW9QRIVOdPU5xJqdee6jRPkZtqjcSwmOrQ0kp5u3cMIv8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<p class="font-label-sm text-label-sm text-primary-container font-bold">ESTADÍSTICAS DEL DÍA</p>
+<p class="text-on-surface-variant text-xs">85% de asistencia proyectada para hoy</p>
+</div>
+</div>
+</section>
+<!-- Right: Appointments Sidebar -->
+<aside class="w-full lg:w-[400px] flex flex-col gap-4">
+<div class="bg-surface rounded-2xl clinical-card-shadow p-6 flex-grow flex flex-col h-full overflow-hidden">
+<div class="flex flex-col gap-4 mb-6">
+<div class="flex justify-between items-center">
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Citas de Hoy</h3>
+<span class="text-xs bg-surface-container-high px-2 py-1 rounded text-on-surface-variant font-bold">24 OCT</span>
+</div>
+<!-- Filters -->
+<div class="flex gap-2 p-1 bg-surface-container-low rounded-xl">
+<button class="flex-1 py-1.5 text-xs font-bold rounded-lg bg-surface shadow-sm text-primary transition-all">Todas</button>
+<button class="flex-1 py-1.5 text-xs font-medium text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all">Confirmadas</button>
+<button class="flex-1 py-1.5 text-xs font-medium text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all">Pendientes</button>
+</div>
+</div>
+<!-- Scrollable Appointment List -->
+<div class="flex-grow overflow-y-auto pr-2 custom-scrollbar space-y-4">
+<!-- Appointment Item 1 -->
+<div class="group p-4 bg-surface rounded-xl border border-outline-variant hover:border-primary hover:bg-primary/5 transition-all cursor-pointer relative overflow-hidden">
+<div class="flex justify-between items-start mb-2">
+<span class="text-primary font-bold font-code-price text-code-price">08:30 AM</span>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold rounded-full uppercase tracking-tighter">Confirmada</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary-container" data-icon="pets">pets</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Luna (Golden Retriever)</p>
+<p class="text-xs text-on-surface-variant">Dueño: Carlos Méndez</p>
+</div>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="p-2 bg-surface-container rounded-lg text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+</button>
+<button class="p-2 bg-surface-container rounded-lg text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+</button>
+<button class="ml-auto p-2 bg-surface-container rounded-lg text-on-surface-variant hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Appointment Item 2 -->
+<div class="group p-4 bg-surface rounded-xl border border-outline-variant hover:border-secondary hover:bg-secondary/5 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-secondary font-bold font-code-price text-code-price">10:15 AM</span>
+<span class="px-2 py-1 bg-secondary/10 text-secondary text-[10px] font-bold rounded-full uppercase tracking-tighter">Pendiente</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary-container" data-icon="pets">pets</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Rocky (Bulldog Francés)</p>
+<p class="text-xs text-on-surface-variant">Dueña: Ana Villalba</p>
+</div>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="p-2 bg-surface-container rounded-lg text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+</button>
+<button class="p-2 bg-surface-container rounded-lg text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</button>
+<button class="ml-auto p-2 bg-surface-container rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Appointment Item 3 -->
+<div class="group p-4 bg-surface rounded-xl border border-outline-variant hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-primary font-bold font-code-price text-code-price">11:00 AM</span>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold rounded-full uppercase tracking-tighter">Confirmada</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary-container" data-icon="pets">pets</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Mimi (Gato Persa)</p>
+<p class="text-xs text-on-surface-variant">Dueño: Jorge Benítez</p>
+</div>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="p-2 bg-surface-container rounded-lg text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+</button>
+<button class="p-2 bg-surface-container rounded-lg text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+</button>
+<button class="ml-auto p-2 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Appointment Item 4 -->
+<div class="group p-4 bg-surface rounded-xl border border-outline-variant hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-primary font-bold font-code-price text-code-price">02:30 PM</span>
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold rounded-full uppercase tracking-tighter">Confirmada</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary-container" data-icon="pets">pets</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Toby (Schnauzer)</p>
+<p class="text-xs text-on-surface-variant">Dueña: Elena Rivas</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Stats Mini Card -->
+<div class="bg-primary-container text-on-primary-container p-6 rounded-2xl clinical-card-shadow">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase opacity-80">Ingresos Proyectados</span>
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<div class="text-2xl font-bold font-code-price">₲ 1.450.000</div>
+<p class="text-xs mt-2 opacity-70">Basado en 8 citas confirmadas</p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Floating Action Button for Mobile -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center md:hidden z-[100]">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<script>
+        // Micro-interactions and Tab Logic
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if(!link.classList.contains('bg-secondary-container')) {
+                    // Logic for switching tabs could go here
+                }
+            });
+        });
+
+        // Hover animation for calendar days
+        const days = document.querySelectorAll('.calendar-grid .aspect-square');
+        days.forEach(day => {
+            day.addEventListener('mouseenter', () => {
+                day.style.transform = 'translateY(-2px)';
+            });
+            day.addEventListener('mouseleave', () => {
+                day.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

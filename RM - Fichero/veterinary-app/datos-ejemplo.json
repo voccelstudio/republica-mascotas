@@ -1,0 +1,510 @@
+{
+  "version": 5,
+  "exportedAt": "2026-06-08T12:00:00.000Z",
+  "data": {
+    "settings": {
+      "clinicName": "República Mascota",
+      "clinicAddress": "Av. 18 de Julio 1845, Montevideo",
+      "clinicPhone": "098 111 222",
+      "clinicEmail": "contacto@republicamascota.uy",
+      "clinicTaxId": "217 12345 0018",
+      "clinicVeterinarian": "Dr. Martín López",
+      "clinicLogo": "assets/logo.jfif",
+      "pdfShowLogo": true,
+      "pdfShowVat": true,
+      "themePrimary": "#005da7",
+      "themeSecondary": "#775a00",
+      "themeDarkMode": false,
+      "procedureCategories": {
+        "Baño": ["Baño Medicado", "Corte de Uñas", "Limpieza de Oídos", "Limpieza Dental"],
+        "Control": ["Control de Peso", "Revisión General", "Control Postquirúrgico", "Control de Alergia"],
+        "Vacunas": ["Rabia", "Quíntuple", "Moquillo", "Parvovirus", "Leucemia Felina"],
+        "Pipetas": ["Frontline Plus", "Advantix", "Revolution", "Stronghold", "NexGard"]
+      },
+      "lastBackupDate": "2026-06-08"
+    },
+    "patients": [
+      {
+        "id": "PAC-EXAMPLE-001",
+        "name": "Luna",
+        "lastName": "García",
+        "species": "Perro",
+        "breed": "Labrador Retriever",
+        "sex": "Hembra",
+        "neutered": true,
+        "ageYears": 3,
+        "ageMonths": 2,
+        "weight": 28.5,
+        "color": "Dorado",
+        "microchip": "ABC123456",
+        "marks": "Mancha blanca en el pecho",
+        "ownerName": "María García",
+        "ownerPhone": "099 111 222",
+        "ownerEmail": "maria.garcia@email.com",
+        "ownerAddress": "Calle 1, Montevideo",
+        "photo": "",
+        "alerts": "Alérgica a las pulgas. No administrar AINEs.",
+        "notes": "Muy activa y cariñosa. Se estresa en la veterinaria, recomendar premios.",
+        "createdAt": "2025-06-01",
+        "updatedAt": "2026-06-01"
+      },
+      {
+        "id": "PAC-EXAMPLE-002",
+        "name": "Simba",
+        "lastName": "Rodríguez",
+        "species": "Gato",
+        "breed": "Siamés",
+        "sex": "Macho",
+        "neutered": true,
+        "ageYears": 5,
+        "ageMonths": 0,
+        "weight": 4.2,
+        "color": "Crema oscuro",
+        "microchip": "DEF789012",
+        "marks": "",
+        "ownerName": "Pedro Rodríguez",
+        "ownerPhone": "099 333 444",
+        "ownerEmail": "pedro.rodriguez@email.com",
+        "ownerAddress": "Av. 18 de Julio 1234",
+        "photo": "",
+        "alerts": "Requiere dieta baja en calorías. Cardiopatía leve.",
+        "notes": "Gato tímido pero dulce una vez que confía. Usar transportadora en visitas.",
+        "createdAt": "2025-06-15",
+        "updatedAt": "2026-05-20"
+      },
+      {
+        "id": "PAC-EXAMPLE-003",
+        "name": "Rocky",
+        "lastName": "Fernández",
+        "species": "Perro",
+        "breed": "Bulldog Francés",
+        "sex": "Macho",
+        "neutered": false,
+        "ageYears": 1,
+        "ageMonths": 8,
+        "weight": 12.0,
+        "color": "Atigrado",
+        "microchip": "GHI345678",
+        "marks": "Nariz rosada con manchas negras",
+        "ownerName": "Ana Fernández",
+        "ownerPhone": "099 555 666",
+        "ownerEmail": "ana.fernandez@email.com",
+        "ownerAddress": "Calle 5, 1234, Carrasco",
+        "photo": "",
+        "alerts": "Propenso a dermatitis en pliegues faciales. Limpiar pliegues diariamente.",
+        "notes": "Ronca fuerte cuando duerme. Muy glotón, controlar alimentación.",
+        "createdAt": "2026-01-10",
+        "updatedAt": "2026-06-01"
+      },
+      {
+        "id": "PAC-EXAMPLE-004",
+        "name": "Copito",
+        "lastName": "Pérez",
+        "species": "Conejo",
+        "breed": "Mini Lop",
+        "sex": "Hembra",
+        "neutered": true,
+        "ageYears": 4,
+        "ageMonths": 6,
+        "weight": 1.8,
+        "color": "Blanco puro",
+        "microchip": "",
+        "marks": "Oreja izquierda caída",
+        "ownerName": "Carlos Pérez",
+        "ownerPhone": "099 999 000",
+        "ownerEmail": "carlos.perez@email.com",
+        "ownerAddress": "Av. Italia 987, Pocitos",
+        "photo": "",
+        "alerts": "Dentadura irregular - revisar mensualmente. Propensa a miosis.",
+        "notes": "Le encanta la zanahoria y el perejil. Se deja manipular bien.",
+        "createdAt": "2025-09-20",
+        "updatedAt": "2026-04-10"
+      },
+      {
+        "id": "PAC-EXAMPLE-005",
+        "name": "Piolín",
+        "lastName": "López",
+        "species": "Ave",
+        "breed": "Periquito",
+        "sex": "Macho",
+        "neutered": false,
+        "ageYears": 2,
+        "ageMonths": 0,
+        "weight": 0.035,
+        "color": "Verde y amarillo",
+        "microchip": "",
+        "marks": "Pluma azul en ala derecha",
+        "ownerName": "Sofía López",
+        "ownerPhone": "099 777 888",
+        "ownerEmail": "sofia.lopez@email.com",
+        "ownerAddress": "Calle 8, 567, Cordón",
+        "photo": "",
+        "alerts": "",
+        "notes": "Silba la canción de Harry Potter. No le gustan los ruidos fuertes.",
+        "createdAt": "2026-03-05",
+        "updatedAt": "2026-05-25"
+      }
+    ],
+    "products": [
+      {
+        "id": "PRD-EXAMPLE-001",
+        "name": "Frontline Plus Perros",
+        "category": "Pipetas",
+        "stock": 20,
+        "minStock": 5,
+        "price": 850
+      },
+      {
+        "id": "PRD-EXAMPLE-002",
+        "name": "Advantix Perros Grandes",
+        "category": "Pipetas",
+        "stock": 10,
+        "minStock": 3,
+        "price": 920
+      },
+      {
+        "id": "PRD-EXAMPLE-003",
+        "name": "Revolution Gatos",
+        "category": "Pipetas",
+        "stock": 8,
+        "minStock": 3,
+        "price": 1100
+      },
+      {
+        "id": "PRD-EXAMPLE-004",
+        "name": "NexGard 30kg",
+        "category": "Antiparasitarios",
+        "stock": 15,
+        "minStock": 5,
+        "price": 1350
+      },
+      {
+        "id": "PRD-EXAMPLE-005",
+        "name": "Alimento Royal Canin Labrador Adulto 15kg",
+        "category": "Alimento",
+        "stock": 4,
+        "minStock": 2,
+        "price": 3200
+      },
+      {
+        "id": "PRD-EXAMPLE-006",
+        "name": "Alimento Hill's gato Adulto 7kg",
+        "category": "Alimento",
+        "stock": 3,
+        "minStock": 2,
+        "price": 2800
+      },
+      {
+        "id": "PRD-EXAMPLE-007",
+        "name": "Shampoo Medicado DermaPet 250ml",
+        "category": "Higiene",
+        "stock": 7,
+        "minStock": 3,
+        "price": 650
+      },
+      {
+        "id": "PRD-EXAMPLE-008",
+        "name": "Collar Isabelino Talle M",
+        "category": "Accesorios",
+        "stock": 12,
+        "minStock": 5,
+        "price": 450
+      },
+      {
+        "id": "PRD-EXAMPLE-009",
+        "name": "Vacuna Quíntuple Canina",
+        "category": "Vacunas",
+        "stock": 25,
+        "minStock": 10,
+        "price": 0
+      },
+      {
+        "id": "PRD-EXAMPLE-010",
+        "name": "Vacuna Rabia",
+        "category": "Vacunas",
+        "stock": 30,
+        "minStock": 10,
+        "price": 0
+      },
+      {
+        "id": "PRD-EXAMPLE-011",
+        "name": "Antipulgas pipeta perros chicos",
+        "category": "Antiparasitarios",
+        "stock": 18,
+        "minStock": 5,
+        "price": 780
+      },
+      {
+        "id": "PRD-EXAMPLE-012",
+        "name": "Alimento Pro Plan Sensitive 3kg",
+        "category": "Alimento",
+        "stock": 6,
+        "minStock": 2,
+        "price": 1850
+      }
+    ],
+    "services": [
+      {
+        "id": "SVC-EXAMPLE-001",
+        "patientId": "PAC-EXAMPLE-001",
+        "serviceType": "Consulta General",
+        "performedBy": "Dr. Martín López",
+        "date": "2026-05-10",
+        "time": "10:30",
+        "notes": "Control de rutina. Sin novedades. Vacunación al día.",
+        "createdAt": "2026-05-10"
+      },
+      {
+        "id": "SVC-EXAMPLE-002",
+        "patientId": "PAC-EXAMPLE-001",
+        "serviceType": "Baño Medicado",
+        "performedBy": "Martina (Bañera)",
+        "date": "2026-05-20",
+        "time": "14:00",
+        "notes": "Baño medicado por dermatitis alérgica. Se utilizó shampoo DermaPet.\n[Insumo utilizado: Shampoo Medicado DermaPet 250ml x1]",
+        "createdAt": "2026-05-20"
+      },
+      {
+        "id": "SVC-EXAMPLE-003",
+        "patientId": "PAC-EXAMPLE-001",
+        "serviceType": "Consulta General",
+        "performedBy": "Dr. Martín López",
+        "date": "2026-05-27",
+        "time": "11:00",
+        "notes": "Control post-baño medicado. Evolución favorable de la dermatitis. Se aplicó Frontline.\n[Insumo utilizado: Frontline Plus Perros x1]",
+        "createdAt": "2026-05-27"
+      },
+      {
+        "id": "SVC-EXAMPLE-004",
+        "patientId": "PAC-EXAMPLE-002",
+        "serviceType": "Vacunación",
+        "performedBy": "Dr. Martín López",
+        "date": "2026-05-18",
+        "time": "11:00",
+        "notes": "Vacuna Quíntuple aplicada. Sin reacciones adversas. Próxima dosis en 1 año.\n[Insumo utilizado: Vacuna Quíntuple Canina x1]",
+        "createdAt": "2026-05-18"
+      },
+      {
+        "id": "SVC-EXAMPLE-005",
+        "patientId": "PAC-EXAMPLE-002",
+        "serviceType": "Consulta General",
+        "performedBy": "Dr. Martín López",
+        "date": "2026-05-04",
+        "time": "09:30",
+        "notes": "Control cardíaco. Corazón estable, soplo leve controlado. Se mantiene medicación.",
+        "createdAt": "2026-05-04"
+      },
+      {
+        "id": "SVC-EXAMPLE-006",
+        "patientId": "PAC-EXAMPLE-003",
+        "serviceType": "Control de Peso",
+        "performedBy": "Dr. Martín López",
+        "date": "2026-05-25",
+        "time": "09:15",
+        "notes": "Peso: 12kg. IMC adecuado para la raza. Continuar con dieta balanceada y ejercicio.",
+        "createdAt": "2026-05-25"
+      },
+      {
+        "id": "SVC-EXAMPLE-007",
+        "patientId": "PAC-EXAMPLE-003",
+        "serviceType": "Baño Medicado",
+        "performedBy": "Martina (Bañera)",
+        "date": "2026-05-28",
+        "time": "15:30",
+        "notes": "Baño con shampoo medicado para pliegues faciales. Se aplicó crema protectora.\n[Insumo utilizado: Shampoo Medicado DermaPet 250ml x1]",
+        "createdAt": "2026-05-28"
+      },
+      {
+        "id": "SVC-EXAMPLE-008",
+        "patientId": "PAC-EXAMPLE-004",
+        "serviceType": "Corte de Uñas",
+        "performedBy": "Martina (Bañera)",
+        "date": "2026-06-01",
+        "time": "16:00",
+        "notes": "Corte de uñas y revisión dental. Se desgastaron incisivos superiores, recomendar heno de calidad.",
+        "createdAt": "2026-06-01"
+      },
+      {
+        "id": "SVC-EXAMPLE-009",
+        "patientId": "PAC-EXAMPLE-004",
+        "serviceType": "Consulta General",
+        "performedBy": "Dr. Martín López",
+        "date": "2026-04-10",
+        "time": "10:00",
+        "notes": "Revisión dental general. Se observa desgaste irregular en molares. Programar control en 3 meses.",
+        "createdAt": "2026-04-10"
+      },
+      {
+        "id": "SVC-EXAMPLE-010",
+        "patientId": "PAC-EXAMPLE-005",
+        "serviceType": "Consulta General",
+        "performedBy": "Dr. Martín López",
+        "date": "2026-03-05",
+        "time": "17:00",
+        "notes": "Revisión inicial. Ave en buen estado general. Se recomienda control anual.",
+        "createdAt": "2026-03-05"
+      }
+    ],
+    "patientProcedures": [
+      {
+        "id": "PP-EXAMPLE-001",
+        "patientId": "PAC-EXAMPLE-001",
+        "category": "Baño",
+        "procedureName": "Baño Medicado",
+        "date": "2026-05-13",
+        "performedBy": "Martina",
+        "nextDate": "2026-05-27",
+        "notes": "Primer baño medicado. Buena tolerancia.\n[Insumo utilizado: Shampoo Medicado DermaPet 250ml x1]",
+        "createdAt": "2026-05-13"
+      },
+      {
+        "id": "PP-EXAMPLE-002",
+        "patientId": "PAC-EXAMPLE-001",
+        "category": "Baño",
+        "procedureName": "Baño Medicado",
+        "date": "2026-05-20",
+        "performedBy": "Martina",
+        "nextDate": "2026-06-03",
+        "notes": "Segundo baño. Continúa evolución favorable.",
+        "createdAt": "2026-05-20"
+      },
+      {
+        "id": "PP-EXAMPLE-003",
+        "patientId": "PAC-EXAMPLE-001",
+        "category": "Pipetas",
+        "procedureName": "Frontline Plus",
+        "date": "2026-05-01",
+        "performedBy": "María García (dueña)",
+        "nextDate": "2026-06-01",
+        "notes": "Aplicación mensual.\n[Insumo utilizado: Frontline Plus Perros x1]",
+        "createdAt": "2026-05-01"
+      },
+      {
+        "id": "PP-EXAMPLE-004",
+        "patientId": "PAC-EXAMPLE-002",
+        "category": "Vacunas",
+        "procedureName": "Rabia",
+        "date": "2026-05-18",
+        "performedBy": "Dr. Martín López",
+        "nextDate": "2027-05-18",
+        "notes": "Primera dosis de vacuna antirrábica. Sin reacciones.",
+        "createdAt": "2026-05-18"
+      },
+      {
+        "id": "PP-EXAMPLE-005",
+        "patientId": "PAC-EXAMPLE-003",
+        "category": "Control",
+        "procedureName": "Revisión General",
+        "date": "2026-05-25",
+        "performedBy": "Dr. Martín López",
+        "nextDate": "",
+        "notes": "Revisión general sin novedades. Se recomienda próxima revisión en 3 meses.",
+        "createdAt": "2026-05-25"
+      },
+      {
+        "id": "PP-EXAMPLE-006",
+        "patientId": "PAC-EXAMPLE-003",
+        "category": "Vacunas",
+        "procedureName": "Quíntuple",
+        "date": "2026-01-15",
+        "performedBy": "Dr. Martín López",
+        "nextDate": "2027-01-15",
+        "notes": "Refuerzo anual de vacuna quíntuple.",
+        "createdAt": "2026-01-15"
+      },
+      {
+        "id": "PP-EXAMPLE-007",
+        "patientId": "PAC-EXAMPLE-004",
+        "category": "Control",
+        "procedureName": "Revisión General",
+        "date": "2026-04-10",
+        "performedBy": "Dr. Martín López",
+        "nextDate": "2026-07-10",
+        "notes": "Revisión dental. Se desgastaron incisivos. Próximo control en 3 meses.",
+        "createdAt": "2026-04-10"
+      },
+      {
+        "id": "PP-EXAMPLE-008",
+        "patientId": "PAC-EXAMPLE-004",
+        "category": "Baño",
+        "procedureName": "Corte de Uñas",
+        "date": "2026-06-01",
+        "performedBy": "Martina",
+        "nextDate": "2026-07-01",
+        "notes": "Corte de uñas mensual. Sin complicaciones.",
+        "createdAt": "2026-06-01"
+      },
+      {
+        "id": "PP-EXAMPLE-009",
+        "patientId": "PAC-EXAMPLE-005",
+        "category": "Control",
+        "procedureName": "Revisión General",
+        "date": "2026-03-05",
+        "performedBy": "Dr. Martín López",
+        "nextDate": "2027-03-05",
+        "notes": "Revisión anual. Ave en buen estado general. Pico y plumas saludables.",
+        "createdAt": "2026-03-05"
+      },
+      {
+        "id": "PP-EXAMPLE-010",
+        "patientId": "PAC-EXAMPLE-003",
+        "category": "Baño",
+        "procedureName": "Baño Medicado",
+        "date": "2026-05-28",
+        "performedBy": "Martina",
+        "nextDate": "2026-06-11",
+        "notes": "Baño medicado para dermatitis en pliegues. Se aplicó crema antibacterial.",
+        "createdAt": "2026-05-28"
+      }
+    ],
+    "appointments": [
+      {
+        "id": "APT-EXAMPLE-001",
+        "patientId": "PAC-EXAMPLE-001",
+        "date": "2026-06-08",
+        "time": "10:00",
+        "reason": "Control de alergia estacional",
+        "notes": "Traer resultados de análisis de sangre anteriores.",
+        "createdAt": "2026-06-01"
+      },
+      {
+        "id": "APT-EXAMPLE-002",
+        "patientId": "PAC-EXAMPLE-003",
+        "date": "2026-06-08",
+        "time": "11:30",
+        "reason": "Revisión de dermatitis en pliegues",
+        "notes": "Traer shampoo medicado si quedó en casa.",
+        "createdAt": "2026-06-05"
+      },
+      {
+        "id": "APT-EXAMPLE-003",
+        "patientId": "PAC-EXAMPLE-004",
+        "date": "2026-06-08",
+        "time": "15:00",
+        "reason": "Corte de uñas + control dental",
+        "notes": "Recordar traer zanahorias para premiar :)",
+        "createdAt": "2026-06-05"
+      },
+      {
+        "id": "APT-EXAMPLE-004",
+        "patientId": "PAC-EXAMPLE-002",
+        "date": "2026-06-10",
+        "time": "09:00",
+        "reason": "Control cardíaco de rutina",
+        "notes": "En ayunas desde las 7am.",
+        "createdAt": "2026-06-06"
+      },
+      {
+        "id": "APT-EXAMPLE-005",
+        "patientId": "PAC-EXAMPLE-001",
+        "date": "2026-06-15",
+        "time": "16:00",
+        "reason": "Baño medicado",
+        "notes": "",
+        "createdAt": "2026-06-08"
+      }
+    ],
+    "vaccinations": [],
+    "prescriptions": []
+  }
+}

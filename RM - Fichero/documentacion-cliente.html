@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>República Mascotas — Documentación del Sistema</title>
+<style>
+  @page { margin: 2cm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+    color: #1e293b;
+    background: #fff;
+    line-height: 1.6;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 28px; margin-bottom: 4px; color: #00366b; }
+  h2 {
+    font-size: 20px; color: #00366b; margin-top: 36px; margin-bottom: 12px;
+    padding-bottom: 6px; border-bottom: 2px solid #00366b;
+  }
+  h3 { font-size: 16px; color: #1e293b; margin-top: 24px; margin-bottom: 8px; }
+  p, li { font-size: 14px; color: #334155; margin-bottom: 8px; }
+  ul, ol { padding-left: 24px; margin-bottom: 12px; }
+  li { margin-bottom: 4px; }
+  strong { color: #1e293b; }
+  .header {
+    display: flex; align-items: center; gap: 16px;
+    padding-bottom: 20px; border-bottom: 3px solid #00366b; margin-bottom: 24px;
+  }
+  .header .logo {
+    width: 64px; height: 64px;
+    border-radius: 12px; flex-shrink: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: #00366b;
+  }
+  .header .logo img { width: 100%; height: 100%; object-fit: contain; }
+  .header .logo .fallback { color: #fff; font-size: 28px; font-weight: 900; }
+  .header .meta { font-size: 13px; color: #64748b; }
+  .toc { background: #f8fafc; padding: 20px 24px; border-radius: 8px; margin-bottom: 32px; }
+  .toc h3 { margin-top: 0; color: #00366b; }
+  .toc ol { margin-bottom: 0; }
+  .toc a { color: #00366b; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .feature-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0;
+  }
+  .feature-card {
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;
+  }
+  .feature-card h4 { font-size: 14px; color: #00366b; margin-bottom: 4px; }
+  .feature-card p { font-size: 13px; color: #475569; margin-bottom: 0; }
+  .badge {
+    display: inline-block; background: #e0f2fe; color: #00366b; font-size: 11px;
+    padding: 2px 8px; border-radius: 4px; font-weight: 600;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
+  th { background: #f1f5f9; text-align: left; padding: 8px 10px; font-weight: 600; color: #1e293b; border-bottom: 2px solid #cbd5e1; }
+  td { padding: 8px 10px; border-bottom: 1px solid #e2e8f0; color: #334155; }
+  tr:hover td { background: #f8fafc; }
+  .page-break { page-break-before: always; }
+  .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #94a3b8; text-align: center; }
+  @media print {
+    body { padding: 0; }
+    .page-break { page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <img src="veterinary-app/assets/logo.jfif" alt="Logo RM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <span class="fallback" style="display:none;">RM</span>
+  </div>
+  <div>
+    <h1>República Mascotas</h1>
+    <p style="font-size:15px;color:#475569;margin-bottom:2px;">Sistema de Gestión Veterinaria</p>
+    <p class="meta">Documentación para el cliente &mdash; Versión 1.0</p>
+  </div>
+</div>
+
+<div class="toc">
+  <h3>Índice</h3>
+  <ol>
+    <li><a href="#intro">Introducción</a></li>
+    <li><a href="#requisitos">Requisitos técnicos</a></li>
+    <li><a href="#instalacion">Instalación y puesta en marcha</a></li>
+    <li><a href="#modulos">Módulos del sistema</a></li>
+    <li><a href="#pacientes">Gestión de Pacientes</a></li>
+    <li><a href="#clientes">Gestión de Clientes</a></li>
+    <li><a href="#agenda">Agenda / Turnos</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#procedimientos">Procedimientos</a></li>
+    <li><a href="#inventario">Inventario y Código de Barras</a></li>
+    <li><a href="#reportes">Reportes PDF</a></li>
+    <li><a href="#configuracion">Configuración</a></li>
+    <li><a href="#backup">Respaldo y Restauración</a></li>
+    <li><a href="#soporte">Soporte técnico</a></li>
+  </ol>
+</div>
+
+<!-- 1. INTRODUCCIÓN -->
+<h2 id="intro">1. Introducción</h2>
+<p><strong>República Mascotas</strong> es un sistema de gestión veterinaria integral, diseñado para funcionar completamente <strong>offline</strong> (sin necesidad de internet). Se ejecuta con solo abrir un archivo <code>index.html</code> en cualquier navegador moderno (Chrome, Edge, Firefox).</p>
+<p>Los datos se almacenan en el disco de la PC mediante <strong>IndexedDB</strong> (base de datos local del navegador) y pueden respaldarse manual o automáticamente en formato JSON.</p>
+
+<div class="feature-grid">
+  <div class="feature-card">
+    <h4>✔ 100% offline</h4>
+    <p>No requiere servidor, internet ni conexión externa. Abrí el archivo y funcioná.</p>
+  </div>
+  <div class="feature-card">
+    <h4>✔ Multiplataforma</h4>
+    <p>Anda en Windows, Mac, Linux, tabletas. Solo necesitás un navegador.</p>
+  </div>
+  <div class="feature-card">
+    <h4>✔ Sin instalación</h4>
+    <p>Doble clic en index.html y ya está listo para usar. No requiere permisos de administrador.</p>
+  </div>
+  <div class="feature-card">
+    <h4>✔ Respaldo automático</h4>
+    <p>Copia de seguridad semanal automática con descarga del archivo JSON.</p>
+  </div>
+</div>
+
+<!-- 2. REQUISITOS TÉCNICOS -->
+<h2 id="requisitos">2. Requisitos técnicos</h2>
+<ul>
+  <li><strong>Sistema operativo:</strong> Windows 10/11, macOS, Linux o tablet con navegador moderno.</li>
+  <li><strong>Navegador:</strong> Google Chrome (recomendado), Microsoft Edge, Mozilla Firefox o Safari. Debe estar actualizado.</li>
+  <li><strong>Almacenamiento:</strong> Espacio libre en disco para la carpeta donde se guarda el sistema y los respaldos.</li>
+  <li><strong>Internet:</strong> No es necesario para el funcionamiento diario. Solo se requiere para la función de WhatsApp Web (si se usa).</li>
+</ul>
+
+<!-- 3. INSTALACIÓN -->
+<h2 id="instalacion">3. Instalación y puesta en marcha</h2>
+<ol>
+  <li><strong>Descargar</strong> la carpeta completa del sistema.</li>
+  <li><strong>Abrir</strong> el archivo <code>index.html</code> con doble clic. Se abrirá en el navegador predeterminado.</li>
+  <li>En la primera ejecución, el sistema crea automáticamente la base de datos local.</li>
+  <li>Ir a <strong>Configuración</strong> para personalizar: nombre de la clínica, logo, teléfono, datos fiscales, etc.</li>
+  <li>Si se desea probar con datos de ejemplo, ir a <strong>Configuración → Respaldo &amp; Restaurar → Cargar datos de ejemplo</strong>.</li>
+</ol>
+<p class="badge">💡 Tip: Se puede crear un acceso directo en el escritorio a <code>index.html</code> para abrirlo más rápido.</p>
+
+<!-- 4. MÓDULOS DEL SISTEMA -->
+<h2 id="modulos">4. Módulos del sistema</h2>
+<table>
+  <thead>
+    <tr><th>Módulo</th><th>Descripción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Dashboard</strong></td><td>Panel principal con resumen de turnos del día, alertas de stock bajo y pacientes recientes.</td></tr>
+    <tr><td><strong>Agenda</strong></td><td>Calendario de turnos con filtro por día y estado (pendiente/atendido/cancelado).</td></tr>
+    <tr><td><strong>Pacientes</strong></td><td>Registro completo de pacientes con foto, alertas, historial clínico, vacunas y procedimientos.</td></tr>
+    <tr><td><strong>Clientes</strong></td><td>Vista de dueños agrupados con todas sus mascotas y datos de contacto.</td></tr>
+    <tr><td><strong>Servicios</strong></td><td>Registro de servicios prestados (consultas, vacunación, baños, etc.).</td></tr>
+    <tr><td><strong>Procedimientos</strong></td><td>Procedimientos programados con próximas fechas y categorías personalizables.</td></tr>
+    <tr><td><strong>Inventario</strong></td><td>Control de stock de productos con alertas, código de barras y carga rápida por scanner.</td></tr>
+    <tr><td><strong>Configuración</strong></td><td>Personalización del sistema, respaldos, restauración y datos de la clínica.</td></tr>
+  </tbody>
+</table>
+
+<!-- 5. PACIENTES -->
+<h2 id="pacientes">5. Gestión de Pacientes</h2>
+
+<h3>Registro de un paciente</h3>
+<ol>
+  <li>Ir a <strong>Pacientes → + Nuevo Paciente</strong>.</li>
+  <li>Completar: nombre, apellido (se autocompleta con el del dueño), especie, raza (con opción "Otra raza" para escribir una personalizada), sexo, castrado, edad, peso, color, microchip, señas particulares.</li>
+  <li>Datos del dueño: nombre, teléfono, email y dirección. Si se escribe el nombre de un dueño ya registrado, el apellido se autocompleta.</li>
+  <li>Se puede agregar una <strong>foto</strong> del paciente (máximo 2 MB).</li>
+  <li>Completar <strong>alertas</strong> (alergias, cuidados especiales) y <strong>notas</strong> internas.</li>
+</ol>
+
+<h3>Historial clínico</h3>
+<p>Cada paciente tiene un perfil con pestañas de:</p>
+<ul>
+  <li><strong>Información general</strong> — datos básicos, foto, alertas, notas</li>
+  <li><strong>Servicios</strong> — historial de servicios prestados</li>
+  <li><strong>Procedimientos</strong> — procedimientos realizados y próximos</li>
+  <li><strong>Vacunas</strong> — registro de vacunas aplicadas con próximas fechas</li>
+  <li><strong>Recetas</strong> — prescripciones y medicación recetada</li>
+  <li><strong>Reporte PDF</strong> — genera un informe completo imprimible del paciente</li>
+</ul>
+
+<h3>WhatsApp</h3>
+<p>Desde el perfil del paciente se puede enviar un mensaje de WhatsApp al dueño con un solo clic. Hay mensajes predefinidos para:</p>
+<ul>
+  <li>Recordatorio de turno</li>
+  <li>Recordatorio de próxima vacuna</li>
+  <li>Recordatorio de próximo procedimiento</li>
+  <li>Mensaje personalizado</li>
+</ul>
+
+<!-- 6. CLIENTES -->
+<h2 id="clientes">6. Gestión de Clientes</h2>
+<p>El módulo de <strong>Clientes</strong> agrupa automáticamente a los dueños por nombre y teléfono. Muestra:</p>
+<ul>
+  <li>Nombre del dueño, teléfono, email y dirección</li>
+  <li>Cantidad de mascotas registradas</li>
+  <li>Badges con los nombres de cada mascota (clic para ir al perfil)</li>
+  <li>Tabla completa de todas las mascotas del dueño</li>
+</ul>
+
+<!-- 7. AGENDA -->
+<h2 id="agenda">7. Agenda / Turnos</h2>
+<ul>
+  <li>Vista de turnos del día, con filtro para ver cualquier fecha.</li>
+  <li>Cada turno se puede marcar como <strong>Pendiente</strong>, <strong>Atendido</strong> o <strong>Cancelado</strong>.</li>
+  <li><strong> Registrar Turno:</strong> seleccionar paciente, fecha, hora y motivo. Opcionalmente se pueden agregar notas internas.</li>
+  <li>Los turnos aparecen destacados con colores según su estado.</li>
+</ul>
+
+<!-- 8. SERVICIOS -->
+<h2 id="servicios">8. Servicios</h2>
+<ul>
+  <li>Registro de cada servicio prestado: tipo (Consulta, Vacunación, Baño, etc.), profesional, fecha, hora y notas.</li>
+  <li>Se pueden registrar <strong>insumos utilizados</strong> en las notas con el formato <code>[Insumo utilizado: Nombre x1]</code>. Estos aparecen automáticamente en los reportes PDF.</li>
+  <li>Búsqueda por nombre de paciente o apellido.</li>
+  <li>Filtros por tipo de servicio.</li>
+</ul>
+
+<!-- 9. PROCEDIMIENTOS -->
+<h2 id="procedimientos">9. Procedimientos</h2>
+<ul>
+  <li>Registro de procedimientos con categorías personalizables (por defecto: Baño, Control, Vacunas, Pipetas).</li>
+  <li>Cada procedimiento puede tener una <strong>próxima fecha</strong> programada (ej: "Próximo baño medicado: 15/07/2026").</li>
+  <li>Las categorías y los nombres de procedimientos se administran desde <strong>Configuración</strong>.</li>
+</ul>
+
+<!-- 10. INVENTARIO -->
+<h2 id="inventario" class="page-break">10. Inventario y Código de Barras</h2>
+
+<h3>Control de Stock</h3>
+<ul>
+  <li>Registro de productos con nombre, stock actual, stock mínimo de alerta y precio.</li>
+  <li>Indicadores visuales: <span style="color:#16a34a;">Normal</span>, <span style="color:#ca8a04;">Bajo</span> (stock ≤ mínimo), <span style="color:#dc2626;">Sin Stock</span>.</li>
+  <li>Resumen en la parte superior: total de productos, bajo stock, sin stock.</li>
+</ul>
+
+<h3>Escaneo con Código de Barras</h3>
+<p>El sistema soporta <strong>lectores de código de barras</strong> (scanner USB). Estos funcionan como un teclado: al escanear, escriben el número y envían un Enter automáticamente.</p>
+
+<p><strong>Flujo de escaneo:</strong></p>
+<ol>
+  <li>En la pantalla de <strong>Inventario</strong> hay un campo de texto "<em>Escaneá un código de barras...</em>".</li>
+  <li>Se apunta el lector al código y se escanea. El número se escribe solo.</li>
+  <li>El sistema busca el producto en la base de datos local.</li>
+  <li>Si el producto <strong>existe</strong> → se abre una ventana para <strong>agregar stock</strong> rápidamente.</li>
+  <li>Si el producto <strong>no existe</strong> → se abre el formulario de <strong>nuevo producto</strong> con el código ya precargado.</li>
+  <li>En el formulario de producto también se puede ingresar o modificar el código de barras manualmente.</li>
+</ol>
+
+<p><strong>Productos con código de barras en datos de ejemplo:</strong></p>
+<table>
+  <thead>
+    <tr><th>Producto</th><th>Código de Barras</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Frontline Plus</td><td>7791234560011</td></tr>
+    <tr><td>Advantix</td><td>7791234560028</td></tr>
+    <tr><td>Revolution</td><td>7791234560035</td></tr>
+    <tr><td>Alimento Royal Canin Perro Adulto 15kg</td><td>7791234560042</td></tr>
+    <tr><td>Alimento Hill's gato Adulto 7kg</td><td>7791234560059</td></tr>
+    <tr><td>Antipulgas NexGard</td><td>7791234560066</td></tr>
+  </tbody>
+</table>
+
+<!-- 11. REPORTES PDF -->
+<h2 id="reportes">11. Reportes PDF</h2>
+<p>Desde el perfil de cada paciente se puede generar un <strong>Reporte PDF</strong> completo que incluye:</p>
+<ul>
+  <li><strong>Encabezado</strong> con logo de la clínica, nombre, dirección, teléfono, email, RUT, veterinario y fecha.</li>
+  <li><strong>Foto y datos del paciente</strong>: especie, raza, sexo, edad, peso, color, microchip.</li>
+  <li><strong>Datos del dueño</strong>: nombre, teléfono, email.</li>
+  <li><strong>Alertas</strong> del paciente.</li>
+  <li><strong>Notas</strong> internas.</li>
+  <li><strong>Servicios realizados</strong> (tabla con fecha, tipo, profesional, insumos utilizados, observaciones).</li>
+  <li><strong>Procedimientos realizados</strong> (tabla con fecha, categoría, profesional, insumos, observaciones).</li>
+  <li><strong>Medicamentos recetados</strong> si existen recetas activas.</li>
+  <li><strong>Pie de página</strong> con la fecha de emisión y datos de la clínica.</li>
+</ul>
+<p>El PDF se genera en el navegador y se puede guardar o imprimir. Si hay algún problema con la generación, automáticamente abre la ventana de impresión del navegador como respaldo.</p>
+
+<p><strong>Datos que aparecen en el PDF:</strong></p>
+<table>
+  <thead>
+    <tr><th>Campo</th><th>Configurable desde</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Logo de la clínica</td><td>Configuración → Logo</td></tr>
+    <tr><td>Nombre de la clínica</td><td>Configuración → Nombre</td></tr>
+    <tr><td>Dirección, teléfono, email, RUT</td><td>Configuración → Datos de la clínica</td></tr>
+    <tr><td>Veterinario a cargo</td><td>Configuración → Veterinario</td></tr>
+  </tbody>
+</table>
+
+<!-- 12. CONFIGURACIÓN -->
+<h2 id="configuracion">12. Configuración</h2>
+
+<h3>Datos de la clínica</h3>
+<ul>
+  <li>Nombre, dirección, teléfono, email, RUT</li>
+  <li>Veterinario a cargo (aparece en PDFs)</li>
+  <li>Logo de la clínica (imagen subida localmente)</li>
+  <li>Preferencias del PDF (mostrar logo, mostrar RUT)</li>
+</ul>
+
+<h3>Personalización visual</h3>
+<ul>
+  <li><strong>Tema de color:</strong> 6 combinaciones predefinidas (Clásico, Bosque, Lavanda, Atardecer, Marino, Roble)</li>
+  <li><strong>Modo oscuro:</strong> activable desde Configuración o con el botón de la barra lateral</li>
+</ul>
+
+<h3>Tipos de servicio</h3>
+<p>Por defecto: Consulta General, Consulta Especializada, Vacunación, Baño Medicado, Cirugía, Análisis Clínicos, Ecografía, Radiografía, Peluquería, Emergencia, Control. Se pueden agregar o quitar libremente.</p>
+
+<h3>Categorías de procedimientos</h3>
+<p>Se administran las categorías (Baño, Control, Vacunas, Pipetas) y los procedimientos dentro de cada una. Se pueden agregar, renombrar o eliminar.</p>
+
+<h3>Especies y razas</h3>
+<p>Por defecto: Perro (28 razas), Gato (10 razas), Conejo (4 razas), Ave (3 razas), Hamster, Tortuga, Hurón, Caballo, Vaca, Cabra, Cerdo, Otros. En cualquier especie se puede seleccionar "Otra raza..." para escribir una personalizada.</p>
+
+<!-- 13. BACKUP -->
+<h2 id="backup">13. Respaldo y Restauración</h2>
+
+<h3>Respaldo manual</h3>
+<p>Ir a <strong>Configuración → Respaldo &amp; Restaurar → Exportar respaldo</strong>. Se descarga un archivo <code>republica_mascotas_backup_YYYY-MM-DD.json</code> con todos los datos.</p>
+
+<h3>Respaldo automático</h3>
+<p>El sistema verifica automáticamente si pasaron 7 días desde el último respaldo. Si es así, muestra un banner con una cuenta regresiva de 5 segundos y descarga el respaldo automáticamente. El usuario puede hacer clic en "Ahora" para descargarlo inmediatamente y cancelar la cuenta regresiva.</p>
+
+<h3>Restauración</h3>
+<p>Ir a <strong>Configuración → Respaldo &amp; Restaurar → Restaurar desde JSON</strong>. Seleccionar un archivo <code>.json</code> de respaldo. Esto reemplaza todos los datos actuales.</p>
+
+<h3>Datos de ejemplo</h3>
+<p>El botón <strong>"Cargar datos de ejemplo"</strong> en Configuración → Respaldo &amp; Restaurar carga un conjunto de datos de prueba (5 pacientes, 10 productos, 7 servicios, 8 procedimientos, 3 turnos) para evaluar el sistema.</p>
+
+<!-- 14. SOPORTE -->
+<h2 id="soporte">14. Soporte técnico</h2>
+<ul>
+  <li><strong>Actualizaciones:</strong> reemplazar la carpeta del sistema por la nueva versión conservando los respaldos.</li>
+  <li><strong>Migración a otra PC:</strong> generar un respaldo JSON en la PC original, copiar la carpeta del sistema a la nueva PC, abrir index.html y restaurar desde el JSON.</li>
+  <li><strong>Problemas comunes:</strong>
+    <ul>
+      <li>Si la base de datos se corrompe, restaurar desde el último respaldo JSON.</li>
+      <li>Si el navegador bloquea la apertura del archivo, hacer clic derecho sobre index.html → "Abrir con" → Chrome/Edge.</li>
+      <li>Los datos de la base de datos local son específicos del navegador. Si se abre el sistema en otro navegador, los datos no estarán visibles hasta restaurar un respaldo.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="footer">
+  <p>República Mascotas — Sistema de Gestión Veterinaria</p>
+  <p>Generado el ${new Date().toLocaleDateString('es-UY', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+</div>
+
+</body>
+</html>
